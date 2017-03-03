@@ -7,18 +7,18 @@ p2 = {'c3': 3, 'c2': 2}
 
 p_all = [p1,p2]
 
-def model_components (processes):
+def model_components_builder (processes):
     comps_unsorted = []
     for process in processes:
         comps_unsorted = comps_unsorted + list(process.keys())
     comps_sorted = sorted(list(set(comps_unsorted)))
     return (comps_sorted)
 
-compos = model_components (p_all)
+compos = model_components_builder (p_all)
 print (compos)
 
 def gujer_stoch_builder (processes):
-    components = model_components (processes)
+    components = model_components_builder (processes)
     gujer_stoch = np.zeros((len(processes),len(components)))
     j = 0
     for process in processes:
